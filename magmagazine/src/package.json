@@ -1,0 +1,40 @@
+{
+  "name": "business",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "browserify": "^16.5.0",
+    "del": "^4.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-babel-minify": "^0.5.1",
+    "gulp-cache": "^1.1.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-rename": "^1.4.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-streamify": "^1.0.2",
+    "gulp-terser": "^1.2.0",
+    "gulp-terser-js": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-pngquant": "^7.0.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "detect-browser": "^4.7.0",
+    "normalize.scss": "^0.1.0",
+    "remove": "^0.1.5"
+  }
+}

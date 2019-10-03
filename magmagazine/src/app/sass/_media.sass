@@ -1,0 +1,96 @@
+@media screen and (max-width: 1024px)
+	.articles
+		grid-template-columns: auto
+		.main-article
+			margin-bottom: 30px
+		.article
+			grid-column: 1
+	.grid-container
+		grid-template-columns: 1fr
+	aside
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-rows: auto auto
+		grid-column: 1
+		.aside-nav
+			grid-row: 2
+		.advertisement
+			grid-row: 1
+			grid-column: 1/4
+			margin-bottom: 15px
+			img
+				width: 100%
+				height: 120px
+	.news
+		grid-template-columns: auto auto
+	.news-categories
+		grid-column: 1/3
+		.categorized-news
+			grid-template-columns: auto auto auto auto
+	.main-footer > .container
+		grid-template-columns: repeat(3, 1fr)
+
+@media screen and (max-width: 768px)
+	.logo
+		margin-bottom: 30px
+		margin-top: 20px
+		span
+			font-size: calc(3rem + 4 * (100vw) / 886)
+		p
+			font-size: calc(1rem + 4 * (100vw) / 886)
+
+@media screen and (max-width: 660px)
+	.top-line
+		flex-direction: column
+		.social
+			margin: 10px 0
+
+	.articles .main-article img
+		width: 100%
+	.news
+		grid-template-columns: 1fr
+		margin-bottom: 30px
+		.latest-news
+			grid-column: 1
+		.popular-news
+			grid-column: 1
+	.news-categories
+		.categorized-news
+			grid-template-columns: auto auto auto
+	.main-footer > .container
+		grid-template-columns: 1fr 1fr
+	.copyright
+		flex-direction: column
+
+@media screen and (max-width: 576px)
+	.news-categories
+		.categorized-news
+			grid-template-columns: auto auto
+	aside
+		grid-template-columns: auto
+		.advertisement
+			grid-column: auto
+			grid-row: auto
+			order: 1
+		.aside-nav
+			grid-column: auto
+			grid-row: auto
+			order: 2
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
+
+@media screen and (max-width: 440px)
+	.news-categories
+		.categorized-news
+			grid-template-columns: auto
+	.main-footer > .container
+		grid-template-columns: 1fr
+	.article
+		flex-direction: column
+		.article-img
+			min-width: 100%
+			margin-right: 0
+			margin-bottom: 15px
+	.top-line
+		.top-nav
+			display: none
