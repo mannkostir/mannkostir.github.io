@@ -1,0 +1,438 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+*, *::before, *::after
+	box-sizing: border-box
+
+body
+	font-family: $default-font
+	font-size: 18px
+img
+	display: block
+	max-width: 100%
+	height: auto
+ul
+	list-style: none
+	margin: 0
+	padding: 0
+a
+	text-decoration: none
+	color: #fff
+button
+	background-color: transparent
+	border: none
+	outline: none
+	padding: 0
+input[placeholder]
+	padding: 0 5px
+	min-height: 30px
+	width: 100%
+	color: #b5b4b4
+	box-sizing: border-box
+	&::placeholder
+		color: #b5b4b4
+input[type="submit"]
+	background-color: #000
+	color: #fff
+	min-height: 30px
+	width: 100%
+	text-transform: uppercase
+	border: none
+	font-size: 18px
+label[for]
+	font-size: 10px
+	margin-left: 5px
+	color: #b5b4b4
+	user-select: none
+h1
+	font-family: 'PlayfairDisplay BoldItalic'
+	text-transform: uppercase
+h2, h3, h4, h5, h6
+	font-family: 'PlayfairDisplay Bold'
+	text-transform: uppercase
+	line-height: 1.1
+h1
+	font-size: 30px
+h2
+	font-size: 28px
+h3
+	font-size: 23px
+h4
+	font-size: 18px
+h5
+	font-size: 14px
+h6
+	font-size: 11px
+.container
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 20px
+
+.main-header
+	background-color: #353436
+	font-family: 'OpenSans Regular'
+	color: #fff
+.main-header__container
+	position: relative
+	display: flex
+	justify-content: space-between
+	min-height: 130px
+	height: 130px // for IE11 compatibility with "align-self"
+
+.popup-toggle
+	position: absolute
+	right: 15px
+	top: 1px
+	text-transform: uppercase
+	font-size: 14px
+	background-color: transparent
+	border: none
+	&:hover
+		color: #e2d1a6
+.popup-toggle__lock-icon
+	display: inline-block
+	margin-left: 10px
+.popup-window
+	display: none
+	position: fixed
+	height: 360px
+	width: 595px
+	max-height: 90%
+	max-width: 100%
+	z-index: 100
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	margin: auto
+	background-color: #353436
+	text-align: center
+	padding: 5px 20px
+	color: #fff
+	&.active
+		display: block
+.popup-window__close-button
+	position: absolute
+	top: 10px
+	right: 10px
+.popup-window__title
+	margin: 0 0 25px 0
+.popup-window__forms
+	display: flex
+	justify-content: center
+	text-align: left
+.sign-in-form
+	width: 185px
+	margin-right: 40px
+.sign-in-form__title
+	margin: 0 0 10px 0
+.sign-in-form__item
+	margin-bottom: 5px
+	&:last-child
+		margin-bottom: 0
+.sign-in-form__submit
+	margin-top: 15px
+	margin-bottom: 5px
+	width: 100%
+.sign-in-form__forget-password-link
+	font-size: 12px
+	color: #b5b4b4
+.sign-up-form
+	width: 180px
+	margin-left: 40px
+.sign-up-form__title
+	margin: 0 0 10px 0
+.sign-up-form__item
+	margin-bottom: 10px
+	&:last-child
+		margin-bottom: 0
+.sign-up-form__confirm
+	display: flex
+.sign-up-form__subscribe
+	display: flex
+.popup-overlay
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-color: #fff
+	opacity: 0.7
+	z-index: 100
+	&.active
+		display: block
+
+.logo
+	align-self: center
+.main-nav
+	display: flex
+.menu
+	display: flex
+	align-self: flex-end
+	-ms-grid-column: 2
+	margin-bottom: 17px
+.menu__item
+	margin-right: 22px
+	&:last-child
+		margin-right: 0
+.menu__link
+	text-transform: uppercase
+	&:hover
+		color: #e2d1a6
+.menu__link:active
+	color: #e2d1a6
+	font-family: 'OpenSans Bold'
+.menu__link_current
+	font-family: 'OpenSans Bold'
+	color: #e2d1a6
+.dropdown
+	position: relative
+	z-index: 10
+.dropdown__dropdown-menu
+	display: none
+	position: absolute
+	top: 40px
+	left: -10px
+	padding: 0
+	width: 170px
+	background-color: #353433
+	padding: 10px 10px 10px 10px
+	box-shadow: 5px 6px 3px #000
+.dropdown__dropdown-menu.visible
+	display: block
+.dropdown__dropdown-item
+	border-bottom: 1px solid #fff
+	padding: 3px 5px
+	&:last-child
+		border: none
+.dropdown__dropdown-link
+	font-size: 16px
+.hamburger
+	display: none
+	position: relative
+	width: 40px
+	height: 35px
+	margin-left: 30px
+	border: none
+	background-color: inherit
+	cursor: pointer
+	outline: none
+	border-radius: 5px
+	span
+		display: block
+		position: absolute
+		height: 5px
+		margin-left: 8px
+		width: 65%
+		background-color: #999
+		border-radius: 9px
+		left: 0
+		transition: .3s ease
+		&:first-child
+			top: 5px
+		&:nth-child(2)
+			top: 15px
+		&:nth-child(3)
+			top: 15px
+		&:nth-child(4)
+			top: 25px
+.hamburger.is-active
+	span:first-child
+		top: 15px
+		transform: rotate(45deg)
+	span:nth-child(2)
+		top: 15px
+		transform: rotate(45deg)
+	span:nth-child(3)
+		top: 15px
+		transform: rotate(-45deg)
+	span:nth-child(4)
+		top: 15px
+		transform: rotate(-45deg)
+
+.glide-slider
+	position: relative
+.glide__slide
+	position: relative
+	height: auto
+.glide__slide-image
+	display: block
+	width: 100%
+	height: 100%
+.glide__slide-caption
+	position: absolute
+	top: 40%
+	// margin: auto
+	right: 0
+	max-width: 40%
+	background-color: #fff
+	padding: 0 30px
+.glide__bullets
+	bottom: 60px
+.glide__bullet
+	width: 15px
+	height: 15px
+	background-color: #fff
+	border: 1px solid #000
+	&:hover
+		background-color: #fff
+	&:focus
+		border: 1px solid #000
+		background-color: #fff
+.glide__bullet--active
+	background-color: #e2d1a6
+	transition: none
+	&:focus,
+	&:hover
+		border: 1px solid #000
+		background-color: #e2d1a6
+.sliding-block
+	position: absolute
+	bottom: 0
+	left: 20px
+	right: 20px
+	margin: auto
+	z-index: 100
+.sliding-block__container
+	position: relative
+.sliding-block__toggle
+	display: block
+	position: absolute
+	top: -50px
+	right: 0
+	left: 0
+	margin: auto
+	width: 100px
+	height: 50px
+	background-color: #fff
+.sliding-block__toggle-icon
+	display: inline-block
+	transition: .3s ease
+	&.active
+		transform: rotate(180deg)
+.sliding-block__list
+	display: -ms-grid
+	display: grid
+	-ms-grid-columns: 1fr 1fr 1fr
+	grid-template-columns: repeat(3, 1fr)
+	height: 0
+	margin: 0
+	padding: 0
+	transition: height 1s linear
+	overflow: hidden
+.sliding-block__item:nth-child(1)
+	-ms-grid-column: 1
+	background-color: #e2d1a6
+	> .more-link
+		color: #fff
+		text-decoration: underline
+.sliding-block__item:nth-child(2)
+	-ms-grid-column: 2
+	background-color: #fff
+.sliding-block__item:nth-child(3)
+	-ms-grid-column: 3
+	background-color: #000
+	color: #fff
+.sliding-block__item
+	display: grid
+	display: -ms-grid
+	grid-template-rows: repeat(3, 1fr)
+	-ms-grid-rows: 1fr 1fr 1fr
+	padding: 15px
+	height: 100%
+.sliding-block-item__title
+	font-size: 28px
+	margin: 0 0 5px 0
+	-ms-grid-row: 1
+.sliding-block-item__text
+	font-size: 16px
+	margin: 0 0 16px 0
+	-ms-grid-row: 2
+.sliding-block-item__more-link
+	display: block
+	text-align: right
+	margin: 0 5px 0 0
+	-ms-grid-row: 3
+
+.main-footer
+	font-family: 'OpenSans Light'
+	font-size: 12px
+	color: #b5b4b4
+	background-color: #353436
+	padding: 20px 0
+.main-footer__heading
+	text-transform: uppercase
+	color: #fff
+.about-us
+	display: flex
+	width: 77%
+	margin: 0 auto 25px auto
+	justify-content: space-between
+	> section
+		margin-right: 40px
+		&:last-child
+			margin-right: 0
+.subscribe-form
+	font-family: 'OpenSans Light'
+	width: 170px
+.subscribe-form__item
+	width: 100%
+	margin-bottom: 8px
+	&:last-child
+		margin-bottom: 0
+.subscribe-form__confirm
+	display: flex
+	align-items: center
+.subscribe-form__confirm-label
+	white-space: nowrap
+.subscribe-form__submit
+	width: 100%
+.subscribe-form__submit-button
+	display: inline-block
+	width: 100%
+.additional-info
+	display: flex
+	justify-content: space-between
+	color: #b5b4b4
+.info__list
+	display: flex
+	padding: 0
+	margin-right: 20px
+.info__item
+	margin-right: 20px
+	&:last-child
+		margin-right: 0
+.lorem
+	font-size: 10px
+	margin-right: 0
+.social
+	display: flex
+	align-items: center
+.social__link
+	margin-right: 10px
+	&:last-child
+		margin-right: 0
+.social__link_fa-icon
+	font-size: 20px
+.social__link_fa-icon:hover
+	color: #e2d1a6
+.language__list
+	display: flex
+	font-size: 14px
+.language__item
+	padding-right: 5px
+	&::after
+		content: ""
+		width: 1px
+		height: 10px
+		background-color: #fff
+		display: inline-block
+	&:last-child::after
+		display: none
+	&:hover,
+	&:active
+		color: #e2d1a6
+
+@import "media"

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	//= template/header.html
+	<main>
+		<section class="glide-slider">
+			<div class="glide__track" data-glide-el="track">
+				<ul class="glide__slides">
+					<li class="glide__slide">
+						<img src="img/slider_image.jpg" alt="Slide image" class="glide__slide-image">
+						<div class="glide__slide-caption">
+							<h1>Lampadari Contemporanei</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+						</div>
+					</li>
+					<li class="glide__slide">
+						<img src="img/slider_image.jpg" alt="Slide image" class="glide__slide-image">
+						<div class="glide__slide-caption">
+							<h1>Lampadari Contemporanei</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+						</div>
+					</li>
+					<li class="glide__slide">
+						<img src="img/slider_image.jpg" alt="Slide image" class="glide__slide-image">
+						<div class="glide__slide-caption">
+							<h1>Lampadari Contemporanei</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="glide__bullets" data-glide-el="controls[nav]">
+				<button class="glide__bullet" data-glide-dir="=0"></button>
+				<button class="glide__bullet" data-glide-dir="=1"></button>
+				<button class="glide__bullet" data-glide-dir="=2"></button>
+			</div>
+			<div class="sliding-block__container container">
+				<div class="sliding-block">
+					<button class="sliding-block__toggle"><img src="img/caret-up_icon.png" alt="" class="sliding-block__toggle-icon"></button>
+					<ul class="sliding-block__list">
+						<li class="sliding-block__item sliding-block-item">
+							<h2 class="sliding-block-item__title">Stai pensando ad un progetto?</h2>
+							<p class="sliding-block-item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+							<span class="sliding-block-item__more-link more-link">Approfandisci</span>
+						</li>
+						<li class="sliding-block__item sliding-block-item">
+							<h2 class="sliding-block-item__title">Vi aspettiamo alla fiera Euroluce</h2>
+							<p class="sliding-block-item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+							<span class="sliding-block-item__more-link more-link">Approfandisci</span>
+						</li>
+						<li class="sliding-block__item sliding-block-item">
+							<h2 class="sliding-block-item__title">Scopri la nuova collezione</h2>
+							<p class="sliding-block-item__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor dolore </p>
+							<span class="sliding-block-item__more-link more-link">Approfandisci</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+	//= template/footer.html
+	<div class="popup-overlay"></div>
+	<div class="popup-window">
+		<button class="popup-window__close-button"><img src="img/close_icon.png" alt="close"></button>
+		<h3 class="popup-window__title">Area Riservata</h3>
+		<div class="popup-window__forms">
+			<form class="sign-in-form" action="#" method="post">
+				<h4 class="sign-in-form__title">Accedi</h4>
+				<ul class="sign-in-form__list">
+					<li class="sign-in-form__item sign-in-form__email">
+						<input type="email" class="sign-in-form__email-input" placeholder="Email">
+					</li>
+					<li class="sign-in-form__item sign-in-form__password">
+						<input type="password" class="sign-in-form__password-input" placeholder="Password">
+					</li>
+					<li class="sign-in-form__item sign-in-form__submit">
+						<input type="submit" class="sign-in-form__submit-button" value="Accedi">
+					</li>
+					<li class="sign-in-form__item sign-in-form__forget-password">
+						<a class="sign-in-form__forget-password-link" href="#">Password dimenticata</a>
+					</li>
+				</ul>
+			</form>
+			<form class="sign-up-form" action="#" method="post">
+				<h4 class="sign-up-form__title">Registrati</h4>
+				<ul class="sign-up-form__list">
+					<li class="sign-up-form__item sign-up-form__name">
+						<input type="text" class="sign-up-form__name-input" placeholder="Nome">
+					</li>
+					<li class="sign-up-form__item sign-up-form__surname">
+						<input type="text" class="sign-up-form__surname-input" placeholder="Cognome">
+					</li>
+					<li class="sign-up-form__item sign-up-form__email">
+						<input type="email" class="sign-up-form__email-input" placeholder="E-mail">
+					</li>
+					<li class="sign-up-form__item sign-up-form__password">
+						<input type="password" class="sign-up-form__password-input" placeholder="Password">
+					</li>
+					<li class="sign-up-form__item sign-up-form__confirm">
+						<input type="checkbox" class="sign-up-form__confirm-checkbox" id="signUpConfirm">
+						<label for="signUpConfirm" class="sign-up-form__confirm-label">Acconsento al trattamento dei dati</label>
+					</li>
+					<li class="sign-up-form__item sign-up-form__subscribe">
+						<input type="checkbox" class="sign-up-form__subscribe-checkbox" id="signUpSubscribe">
+						<label for="signUpSubscribe" class="sign-up-form__subscribe-label">Mi iscrivo alla Newsletter</label>
+					</li>
+					<li class="sign-up-form__item sign-up-form__submit">
+						<input type="submit" class="sign-up-form__submit-button" value="iscriviti">
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<script src="js/main.js"></script>
+</body>
+</html>
