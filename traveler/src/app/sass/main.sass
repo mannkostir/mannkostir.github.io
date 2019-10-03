@@ -1,0 +1,436 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+
+*, *:before, *:after
+	box-sizing: border-box
+	padding: 0
+	margin: 0
+ul
+	list-style: none
+	padding: 0
+
+a:hover
+		text-decoration: none
+
+button
+	border: none
+
+h1, h2, h3, h4, h5, h6
+	font-family: 'Nexa Book'
+	font-weight: 500
+
+h3
+	font-size: 1.8em
+h5
+	font-size: 1.6em
+
+body
+	font-family: 'Nexa Bold'
+	font-size: 16px
+	min-width: 350px
+.page-container
+	overflow-x: hidden
+	padding: 0
+
+header
+	position: relative
+	background-color: #ececec
+	padding-top: 35px
+	height: 130px
+.logo
+	display: flex
+	.logo-title
+		margin: auto 0 auto 10px
+		span
+			font-family: 'Nexa Black'
+			display: block
+			color: #6a19ac
+			font-size: 39px
+			line-height: 1
+			font-weight: 800
+		p
+			font-family: 'PTSans Italic'
+			color: #a2a2a2
+			font-size: 12px
+			line-height: 1
+			white-space: nowrap
+.main-search
+	position: relative
+	input
+		border: none
+		outline: none
+		padding: 10px 20px
+		font-size: 12px
+		width: 100%
+		color: #959595
+		box-shadow: inset 0 0 5px
+	button
+		position: absolute
+		top: 0
+		bottom: 0
+		margin: auto
+		right: 20px
+		background-color: transparent
+		border: none
+.menu-toggle-button
+	position: relative
+	height: 30px
+	width: 40px
+	background-color: #2d2d2d
+	outline: none !important
+	border-radius: 5px
+	box-shadow: 0 0 2px #000
+	margin-top: 30px
+	span
+		position: absolute
+		height: 5px
+		width: 50%
+		background-color: #fff
+		box-shadow: inset 0 0 1px #000
+		border-radius: 2px
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		transform: rotate(90deg)
+		margin-left: 10px
+		&:nth-child(1)
+			left: -10px
+		&:nth-child(2)
+			left: 0
+		&:nth-child(3)
+			left: 10px
+	&[aria-expanded='false']
+		opacity: 0.7
+	&[aria-expanded='true']
+		opacity: 0.97
+
+#menuNav
+	z-index: 100
+	.menu
+		opacity: 0.97
+		li
+			background-color: #2d2d2d
+			font-size: 17px
+			position: relative
+			white-space: nowrap
+			padding: 0 10px
+			cursor: pointer
+			margin: -1px
+			&:hover
+				color: #9457cb
+				a
+					color: inherit
+			a
+				display: inline-block
+				width: 83%
+				color: #d5d5d5
+				padding-right: 17px
+				margin-left: 15px
+			i
+				width: 15px
+.carousel
+	display: none
+	z-index: -1
+	background-color: #2d2d2d
+	width: 100%
+	height: auto
+	transition: 1s linear
+	.carousel-item
+		img
+			display: block
+			height: 100%
+			width: 100%
+.about
+	position: relative
+	background-color: #2d2d2d
+	padding: 60px 0 40px 0
+.about-header
+	opacity: 0
+	text-align: center
+	margin-bottom: 40px
+	transition: 1s linear
+	transform: translateY(-100%)
+	h3
+		color: #fff
+		margin: 0
+		margin-bottom: 20px
+	p
+		color: #a161db
+		line-height: 0
+	&.fade-in
+		transform: translateY(0)
+		opacity: 1
+.about-image
+	display: block
+	position: relative
+	margin-bottom: 50px
+	opacity: 0
+	transition: 1.7s ease
+	.map
+		cursor: pointer
+		width: 100%
+		height: 100%
+	&.fade-in
+		opacity: 1
+	.map-mark
+		width: 2.5%
+		height: 20%
+		position: absolute
+		background-color: transparent
+		cursor: pointer
+	.first-mark
+		top: 20%
+		left: 60%
+	.second-mark
+		top: 50%
+		left: 50%
+	.third-mark
+		top: 3%
+		left: 23%
+	.fourth-mark
+		bottom: 30%
+		left: 25%
+	.fifth-mark
+		bottom: 20%
+		right: 17%
+.modal
+	display: none
+	position: fixed
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	background: rgba(31, 31, 31, 0.99)
+	max-width: 600px
+	height: 80%
+	max-height: 840px
+	z-index: 110
+	&.opened
+		display: flex
+	.modal-content
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		overflow: auto
+		background-color: transparent
+		.modal-header
+			border: none
+			h5
+				color: #fff
+			p
+				color: #a161db
+		.divider
+			height: 5px
+			width: 80%
+			background-color: #fff
+			margin-bottom: 30px
+			border-radius: 5px
+			box-shadow: inset 0 0 5px
+		.locations
+			width: 80%
+			border: 10px solid #a161db
+			border-radius: 5px
+			box-shadow: 0 0 10px #a161db
+			background-color: #fff
+			padding: 10px 15px
+			li
+				position: relative
+				background-color: #fff
+				&:before
+					display: inline-block
+					content: url("../img/icons/mark_icon_modal.png")
+					position: relative
+					bottom: -5px
+					height: 31px
+					width: 21px
+					margin-right: 7px
+				a
+					color: rgba(31, 31, 31, 0.99)
+					&:hover
+						color: #a161db
+	.close-button
+		position: absolute
+		right: 0
+		align-self: flex-start
+		width: 30px
+		height: 30px
+		background-color: #0f0f0f
+		z-index: 110
+		color: #fff
+		margin-right: 20px
+		margin-top: 10px
+		box-shadow: inset 0 0 5px #000
+		outline: none
+.modal-overlay
+	display: none
+	z-index: 100
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	width: 100%
+	height: 100%
+	background-color: #000
+	opacity: 0.7
+	&.opened
+		display: block
+.about-content
+	position: relative
+	ul
+		li
+			width: 100%
+			opacity: 0
+			color: #ffffff
+			transition: 1s linear
+			margin-bottom: 40px
+			&:first-child
+				transform: translateX(-50%)
+			&:last-child
+				transform: translateX(50%)
+			&.fade-in
+				opacity: 1
+				transform: none
+			p
+				font-family: 'Arial'
+.team
+	background-color: #ebebeb
+	padding: 30px
+	margin-bottom: 15px
+.team-header
+	text-align: center
+.team-list
+	li
+		text-align: center
+		.frame
+			background-color: #fff
+			width: 80%
+			height: auto
+			max-width: 200px
+			max-height: 200px
+			margin: 0 auto
+			transform: rotate(-8deg)
+			transition: 1s ease
+			.team-member-photo
+				position: relative
+				height: 100%
+				width: 100%
+				transition: 1s ease
+				transform: rotate(8deg)
+				img
+					width: 100%
+					height: 100%
+				.twitter-button
+					position: absolute
+					bottom: 0px
+					right: 0px
+					max-height: 35px
+					width: 45px
+					background-color: #8f33c4
+					i
+						padding: 5px 0
+						color: #fff
+						font-size: 20px
+		.team-member-description
+			margin-top: 20px
+			h6
+				font-family: 'PTSans Bold'
+				font-size: 1.3em
+			p
+				font-family: 'PTSans Regular'
+				font-size: 0.9em
+		.frame:hover
+			transition: 1s ease
+			.team-member-photo
+				transition: 1s ease
+				transform: rotate(0deg)
+
+.articles
+	background-color: #ebebeb
+	padding-top: 30px
+	padding-bottom: 10px
+	.article
+		position: relative
+		background-color: #fff
+		padding: 60px 45px
+		margin-bottom: 20px
+		opacity: 0
+		transition: 1s linear
+		&:nth-child(odd)
+			transform: translateX(-50%)
+		&:nth-child(even)
+			transform: translateX(50%)
+		&.fade-in
+			opacity: 1
+			transform: translateX(0)
+		.lead
+			font-size: 1.2em
+		.more-link
+			position: absolute
+			top: 0
+			left: 0
+			width: 32px
+			height: 32px
+			color: #fff
+			background-color: #8f33c4
+			font-size: 22px
+			padding: 0
+			font-size: 1em
+
+footer
+	background-color: #373737
+	padding-top: 20px
+.footer-logo
+	.logo-title
+		span
+			color: #fff
+		p
+			color: #cacaca
+.footer-menu
+	display: none
+	li
+		cursor: pointer
+		padding: 5px 0
+		a
+			color: #cacaca
+			padding-bottom: 10px
+	li:hover a
+		color: #914dcf
+.footer-text
+	margin-top: 30px
+	font-family: 'Helvetica Regular'
+	color: #cacaca
+.footer-social
+	display: flex
+	flex-direction: column
+	margin-left: 0
+	li
+		white-space: nowrap
+		cursor: pointer
+		padding: 5px 0
+		a
+			color: #fff
+		i
+			margin-right: 10px
+	li:hover a
+		color: #914dcf
+.footer-links
+	text-align: center
+	li
+		display: inline-block
+		margin-right: 15px
+		a
+			color: #cacaca
+.footer-copyright
+	text-align: center
+	p
+		font-family: 'Helvetica Regular'
+		font-size: 11px
+		color: #6c6c6c
+
+@import "media"

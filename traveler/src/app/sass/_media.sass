@@ -1,0 +1,99 @@
+@media (min-width: 576px)
+	h3
+		font-size: 2.2em
+	h5
+		font-size: 1.7em
+	body
+		font-size: 16px
+	.footer-menu
+		flex-direction: row
+		white-space: nowrap
+		display: flex
+		li::before
+			content: ""
+			display: inline-block
+			background-color: #767676
+			width: 1px
+			height: 10px
+		li:first-child::before
+			width: 0
+			height: 0
+		li:hover a
+			border-bottom: 5px solid #914dcf
+			color: #914dcf
+		li a
+			margin: 0 25px
+		li:first-child a
+			margin-left: 0
+	.footer-social
+		flex-direction: row
+		li
+			margin-right: 30px
+
+@media (min-width: 768px)
+	.footer-links
+		text-align: left
+	.footer-copyright
+		text-align: left
+
+@media (min-width: 992px)
+	#menuNav
+		.menu
+			margin-bottom: 0
+			margin-top: 35px
+			li
+				position: relative
+				display: inline-block
+				font-family: 'PTSans Bold'
+				text-align: center
+				height: 110px
+				min-width: 157px
+				padding: 2% 0
+				background-color: #fff
+				border-right: 1px solid #d4d4d4
+				opacity: 0.7
+				transition: 0.5s ease
+				z-index: 100
+				&:nth-child(1)
+					border-bottom: 5px solid #6017a3
+				&:nth-child(2)
+					border-bottom: 5px solid #701dbb
+				&:nth-child(3)
+					border-bottom: 5px solid #8038c2
+				&:nth-child(4)
+					border-bottom: 5px solid #a34ff0
+				&:nth-child(5)
+					border-bottom: 5px solid #8038c2
+				&:nth-child(6)
+					border-bottom: 5px solid #701dbb
+				&:hover
+					color: #701dbb
+					border-bottom-width: 10px
+					margin-top: -10px
+					transition: 0.3s ease
+					height: 120px
+					opacity: 1
+					a
+						color: inherit
+				a
+					position: absolute
+					top: 0
+					padding: 0
+					margin: 0
+					padding-top: 60px
+					display: block
+					color: #8b8b8b
+					width: 100%
+					height: 100%
+				i
+					font-size: 26px
+					width: auto
+					padding-bottom: 15px
+	.about-image .map-mark
+		visibility: hidden
+	.about-image:hover .map-mark
+		visibility: visible
+		transform: translateY(-5px)
+		transition: .5s ease
+	.articles .article:nth-child(odd)
+		margin-right: 25px
