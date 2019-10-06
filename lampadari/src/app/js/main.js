@@ -1,6 +1,6 @@
 'use strict';
 
-window.onresize = function(){ location.reload(); }
+// window.onresize = function(){ location.reload(); }
 
 popupWindow();
 
@@ -61,7 +61,7 @@ function glideSlider() {
 	});
 
 	glide.mount();
-}
+};
 
 function slideUp(block) {
 	let blockHeight = block.scrollHeight;
