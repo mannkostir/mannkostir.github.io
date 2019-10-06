@@ -16,13 +16,13 @@ hamburgerMenu();
 
 function highlightNav() {
 	const currentLink = window.location.pathname;
-	const links = document.querySelectorAll('.main-menu__link');
+	const links = document.querySelectorAll('.menu__link');
 
 	for (let i = 0; i < links.length; i++) {
 		let link = links[i];
 
 		if (link.getAttribute('href') == currentLink) {
-			link.classList.add('main-menu__link_current');
+			link.classList.add('menu__link_current');
 		}
 	};
 };
@@ -63,6 +63,22 @@ function glideSlider() {
 	glide.mount();
 }
 
+class Slide {
+	constructor(toggle, icon, block) {
+		let slideListHeight = slideList.scrollHeight;
+
+		this.toggle = toggle;
+		this.icon = icon;
+		this.block = block;
+	}
+
+	slideUp() {
+		this.toggle.classList.add('open');
+		this.icon.classList.add('active');
+		this.block.style.height = slideListHeight + 'px';
+	}
+}
+
 function slidingBlock() {
 	const slideToggle = document.querySelector('.sliding-block__toggle');
 	const slideToggleIcon = document.querySelector('.sliding-block__toggle-icon');
@@ -72,7 +88,6 @@ function slidingBlock() {
 	let slideListHeight;
 
 	slideToggle.addEventListener("click", () => {
-
 		if (slideList.classList.contains('open')) {
 			slideList.classList.remove('open');
 			slideToggleIcon.classList.remove('active');
@@ -81,16 +96,18 @@ function slidingBlock() {
 			slideListHeight = slideList.scrollHeight;
 			slideList.classList.add('open');
 			slideToggleIcon.classList.add('active');
+			slideUp(slideList, slideListHeight);
 			slideList.style.height = slideListHeight + 'px';
 		}
 	});
 };
 
 function drodownMenu() {
-	const drodownToggle = document.querySelector('.dropdown__dropdown-toggle');
-	const dropdownMenu = document.querySelector('.dropdown__dropdown-menu');
+	const dropdownToggle = document.querySelector('.dropdown__toggle');
+	const dropdownMenu = document.querySelector('.dropdown__menu');
 
-	drodownToggle.addEventListener("click", () => {
+	dropdownToggle.addEventListener("click", () => {
+		dropdownToggle.classList.toggle('active');
 		dropdownMenu.classList.toggle('visible');
 	});
 };
