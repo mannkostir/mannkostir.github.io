@@ -183,17 +183,14 @@ h6
 		color: #e2d1a6
 .menu__link:active
 	color: #e2d1a6
+	font-family: 'OpenSans Bold'
 .menu__link_current
 	font-family: 'OpenSans Bold'
 	color: #e2d1a6
-.dropdown__toggle
-	&.active
-		font-family: 'OpenSans Bold'
-		color: #e2d1a6
 .dropdown
 	position: relative
 	z-index: 10
-.dropdown__menu
+.dropdown__dropdown-menu
 	display: none
 	position: absolute
 	top: 40px
@@ -203,14 +200,14 @@ h6
 	background-color: #353433
 	padding: 10px 10px 10px 10px
 	box-shadow: 5px 6px 3px #000
-.dropdown__menu.visible
+.dropdown__dropdown-menu.visible
 	display: block
-.dropdown__item
+.dropdown__dropdown-item
 	border-bottom: 1px solid #fff
 	padding: 3px 5px
 	&:last-child
 		border: none
-.dropdown__link
+.dropdown__dropdown-link
 	font-size: 16px
 .hamburger
 	display: none
@@ -267,6 +264,7 @@ h6
 .glide__slide-caption
 	position: absolute
 	top: 40%
+	// margin: auto
 	right: 0
 	max-width: 40%
 	background-color: #fff

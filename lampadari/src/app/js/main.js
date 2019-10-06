@@ -16,13 +16,13 @@ hamburgerMenu();
 
 function highlightNav() {
 	const currentLink = window.location.pathname;
-	const links = document.querySelectorAll('.menu__link');
+	const links = document.querySelectorAll('.main-menu__link');
 
 	for (let i = 0; i < links.length; i++) {
 		let link = links[i];
 
 		if (link.getAttribute('href') == currentLink) {
-			link.classList.add('menu__link_current');
+			link.classList.add('main-menu__link_current');
 		}
 	};
 };
@@ -81,18 +81,16 @@ function slidingBlock() {
 			slideListHeight = slideList.scrollHeight;
 			slideList.classList.add('open');
 			slideToggleIcon.classList.add('active');
-			slideUp(slideList, slideListHeight);
 			slideList.style.height = slideListHeight + 'px';
 		}
 	});
 };
 
 function drodownMenu() {
-	const dropdownToggle = document.querySelector('.dropdown__toggle');
-	const dropdownMenu = document.querySelector('.dropdown__menu');
+	const drodownToggle = document.querySelector('.dropdown__dropdown-toggle');
+	const dropdownMenu = document.querySelector('.dropdown__dropdown-menu');
 
-	dropdownToggle.addEventListener("click", () => {
-		dropdownToggle.classList.toggle('active');
+	drodownToggle.addEventListener("click", () => {
 		dropdownMenu.classList.toggle('visible');
 	});
 };
