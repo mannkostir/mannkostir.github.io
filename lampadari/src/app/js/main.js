@@ -53,9 +53,9 @@ function glideSlider() {
 	const Glide = require('@glidejs/glide');
 
 	const glide = new Glide('.glide-slider', {
-		type: 'slider',
+		type: 'carousel',
 		autoplay: 5000,
-		animationDuration: 1000,
+		animationDuration: 2000,
 		hoverpause: false,
 		gap: 0
 	});
