@@ -260,6 +260,7 @@ h6
 .glide__slide
 	position: relative
 	height: auto
+	width: 100%
 .glide__slide-image
 	display: block
 	width: 100%
@@ -267,7 +268,6 @@ h6
 .glide__slide-caption
 	position: absolute
 	top: 40%
-	// margin: auto
 	right: 0
 	max-width: 40%
 	background-color: #fff
@@ -279,6 +279,7 @@ h6
 	height: 15px
 	background-color: #fff
 	border: 1px solid #000
+	transition: none
 	&:hover
 		background-color: #fff
 	&:focus
@@ -323,7 +324,7 @@ h6
 	height: 0
 	margin: 0
 	padding: 0
-	transition: height 1s linear
+	transition: height .7s linear
 	overflow: hidden
 .sliding-block__item:nth-child(1)
 	-ms-grid-column: 1
@@ -341,8 +342,8 @@ h6
 .sliding-block__item
 	display: grid
 	display: -ms-grid
-	grid-template-rows: repeat(3, 1fr)
-	-ms-grid-rows: 1fr 1fr 1fr
+	grid-template-rows: auto auto auto
+	-ms-grid-rows: auto auto auto
 	padding: 15px
 	height: 100%
 .sliding-block-item__title

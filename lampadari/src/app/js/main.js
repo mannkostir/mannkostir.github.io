@@ -63,44 +63,33 @@ function glideSlider() {
 	glide.mount();
 }
 
-class Slide {
-	constructor(toggle, icon, block) {
-		let slideListHeight = slideList.scrollHeight;
-
-		this.toggle = toggle;
-		this.icon = icon;
-		this.block = block;
-	}
-
-	slideUp() {
-		this.toggle.classList.add('open');
-		this.icon.classList.add('active');
-		this.block.style.height = slideListHeight + 'px';
-	}
-}
+function slideUp(block) {
+	let blockHeight = block.scrollHeight;
+	block.classList.add('open');
+	block.style.height = blockHeight + 'px';
+};
+function slideDown(block) {
+	block.classList.remove('open');
+	block.style.height = null;
+};
 
 function slidingBlock() {
 	const slideToggle = document.querySelector('.sliding-block__toggle');
 	const slideToggleIcon = document.querySelector('.sliding-block__toggle-icon');
 	const slideList = document.querySelector('.sliding-block__list');
-	const slideItem = document.querySelector('.sliding-block__item');
-
-	let slideListHeight;
 
 	slideToggle.addEventListener("click", () => {
+
 		if (slideList.classList.contains('open')) {
-			slideList.classList.remove('open');
 			slideToggleIcon.classList.remove('active');
-			slideList.style.height = null;
+			slideDown(slideList);
 		} else {
-			slideListHeight = slideList.scrollHeight;
-			slideList.classList.add('open');
 			slideToggleIcon.classList.add('active');
-			slideUp(slideList, slideListHeight);
-			slideList.style.height = slideListHeight + 'px';
+			slideUp(slideList);
 		}
 	});
 };
+
 
 function drodownMenu() {
 	const dropdownToggle = document.querySelector('.dropdown__toggle');
