@@ -65,11 +65,9 @@ function glideSlider() {
 
 function slideUp(block) {
 	let blockHeight = block.scrollHeight;
-	block.classList.add('open');
 	block.style.height = blockHeight + 'px';
 };
 function slideDown(block) {
-	block.classList.remove('open');
 	block.style.height = null;
 };
 
@@ -82,9 +80,11 @@ function slidingBlock() {
 
 		if (slideList.classList.contains('open')) {
 			slideToggleIcon.classList.remove('active');
+			slideList.classList.remove('open');
 			slideDown(slideList);
 		} else {
 			slideToggleIcon.classList.add('active');
+			slideList.classList.add('open');
 			slideUp(slideList);
 		}
 	});
